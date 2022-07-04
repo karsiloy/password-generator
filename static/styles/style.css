@@ -1,0 +1,75 @@
+body
+{
+	background-color: #222222;
+	font-family: Arial,Helvetica,sans-serif;
+    font-size: 14px;
+}
+
+.main
+{
+	width: 900px;
+    margin: 15px auto;
+    padding: 50px 30px 10px 30px;
+    background: whitesmoke;
+    line-height: 23px;
+    border: 1px solid #dfdfdf;
+    border-radius: 10px 10px;
+    overflow: hidden;
+}
+
+.options
+{
+	width: 800px;
+    float: left;
+    margin: 0 0 10px 0;
+    padding: 2px 50px 2px 50Px;
+}
+
+.txt
+{
+	display: inline;
+    text-align: left;
+    float: left;
+    width: 220px;
+    margin: 0;
+    padding: 0;
+    height: 27px;
+}
+
+.chkbox
+{
+	display: inline;
+    text-align: left;
+    float: left;
+    width: 580px;
+    margin: 0;
+    padding: 0;
+    height: 27px;
+}
+
+.btns
+{
+	width: 800px;
+    margin: 0;
+    text-align: left;
+    padding: 0px 0px 17px 272px;
+    float: left;
+}
+
+.test
+{
+    float: left;
+    margin: 0 0 10px 50px;
+    padding: 0px 2px 2px 0px;
+}
+
+select
+{
+	width: 10em;
+}
+
+.password
+{
+	width: 20em;
+	height: 2em;
+}

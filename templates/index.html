@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Password Generator</title>
+	<link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/style.css') }}">
+</head>
+<body>
+	<div class="main">
+		<h1>Password Generator</h1>
+		<hr>
+		<div class="options">
+			<div class="txt">Password Length:</div>
+			<div class="chkbox">
+				
+				<select name="length" id="length" title="Choose your password length.", class="length">
+					<optgroup label="Weak">
+						{% for length in weak_lengths %}
+							<option value="{{length}}">{{ length }}</option>
+						{% endfor %}
+					</optgroup>
+					<optgroup label="Strong">
+						{% for length in strong_lengths %}
+							{% if length == 16 %}
+								<option value="{{ length }}" selected>{{ length }}</option>
+							{% else %}
+								<option value="{{ length }}">{{ length }}</option>
+							{% endif %}
+						{% endfor %}
+					</optgroup>
+
+
+					<optgroup label="Unbelievable">
+						{% for length in unbelievable_lengths %}
+							<option value="{{ length }}">{{ length }}</option>
+						{% endfor %}
+					</optgroup>
+				</select>
+			</div>
+
+			<div class="txt">Include Symblos:</div>
+			<div class="chkbox">
+				<label>
+					<input type="checkbox" checked class="symbols"> ( e.g. @#$% )
+				</label>
+			</div>
+
+			<div class="txt">Include Numbers:</div>
+			<div class="chkbox">
+				<label>
+					<input type="checkbox" checked class="numbers"> ( e.g. 123456 )
+				</label>
+			</div>
+
+			<div class="txt">Include Lowercase Characters:</div>
+			<div class="chkbox">
+				<label>
+					<input type="checkbox" checked class="lower"> ( e.g. abcdefgh )
+				</label>
+			</div>
+
+			<div class="txt">Include Uppercase Characters:</div>
+			<div class="chkbox">
+				<label>
+					<input type="checkbox" checked class="upper"> ( e.g. ABCDEFGH )
+				</label>
+			</div>
+		</div>
+
+		<div class="btns">
+			<input type="button" name="generate" value="Generate password" class="generate">
+			<input type="button" name="clear" value="Clear" class="clear">
+		</div>
+
+		<div class="test">
+			<div class="txt">Your New Password:</div>
+		</div>
+		<div class="chkbox">
+			<label>
+				<input type="text" value="Your new password will appear here." name="password" class="password" title="Password">
+				<input type="button" value="Copy" name="copy" class="copy">
+			</label>
+		</div>
+	</div>
+	<script src="{{url_for('static', filename='index.js')}}"></script>
+</body>
+</html>
